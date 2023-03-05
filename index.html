@@ -15,6 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://kit.fontawesome.com/72ce9e348b.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <header class="header">
@@ -85,13 +86,15 @@
     <section class="home-hero">
       <div class="home-hero__content">
         <h1 class="heading-primary">Hey, My name is Yadu Krishna M</h1>
+        <h3 class="heading-primary">iam a <span class="mul"></span></h3>
         <div class="home-hero__info">
           <p class="text-primary">
            iam the fullstack Developer in the domain MEARN
           </p>
         </div>
         <div class="home-hero__cta">
-          <a href="./#projects" class="btn btn--bg">Projects</a>
+          <a href="./#projects" class="btn btn--bg">Projects</a> &nbsp; <br> <br><br>
+          <a href="./Yadu New resume.pdf" download="yadupdf" class="btn btn--bg">Download My Cv &nbsp; <i class="fa-solid fa-download"></i></a>
         </div>
       </div>
       <div class="home-hero__socials">
@@ -307,11 +310,11 @@ Overall, the Quiz Web App project was a challenging and rewarding experience, as
         <h2 class="heading heading-sec heading-sec__mb-med">
           <span class="heading-sec__main heading-sec__main--lt">Contact</span>
           <span class="heading-sec__sub heading-sec__sub--lt">
-          feel free to contact me
+          feel free to contact me!  &nbsp;<span class="mul2"></span>
           </span>
         </h2>
         <div class="contact__form-container">
-          <form action="#" class="contact__form">
+          <form onsubmit="sendEmail(); reset(); return false;" class="contact__form">
             <div class="contact__form-field">
               <label class="contact__form-label" for="name">Name</label>
               <input
@@ -346,7 +349,7 @@ Overall, the Quiz Web App project was a challenging and rewarding experience, as
                 id="message"
               ></textarea>
             </div>
-            <button type="submit" class="btn btn--theme contact__btn">
+            <button type="submit"   class="btn btn--theme contact__btn">
               Submit
             </button>
           </form>
@@ -397,6 +400,7 @@ Overall, the Quiz Web App project was a challenging and rewarding experience, as
                 />
               </a>
             </div>
+            
           </div>
           <div class="main-footer__row main-footer__row-2">
             <h4 class="heading heading-sm text-lt">Yadu krishna</h4>
@@ -416,7 +420,45 @@ Overall, the Quiz Web App project was a challenging and rewarding experience, as
         </div>
       </div>
     </footer>
-
     <script src="./index.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/js/fontawesome.min.js" integrity="sha512-36dJpwdEm9DCm3k6J0NZCbjf8iVMEP/uytbvaiOKECYnbCaGODuR4HSj9JFPpUqY98lc2Dpn7LpyPsuadLvTyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+   
+    <script>
+  
+  var typed=new Typed(".mul",{
+  strings: ["programmer","developer","fullstack developer","frontend developer","backend developer","Fullstack developer","programmer","developer","fullstack developer","frontend developer","backend developer","Fullstack developer","programmer","developer","fullstack developer","frontend developer","backend developer","Fullstack developer"],
+  typeSpeed : 150,
+  backSpeed:150,
+  looped: true
+})
+var textdata=new Typed(".mul2",{
+  strings:["contact by email"," Connect me on Linkedin","Download My Cv","Follow me on Github","send a mail to mailmeyadukrishnanm3@gmail.com","contact by email"," Connect me on Linkedin","Download My Cv","Follow me on Github","send a mail to mailmeyadukrishnanm3@gmail.com","contact by email"," Connect me on Linkedin","Download My Cv","Follow me on Github","send a mail to mailmeyadukrishnanm3@gmail.com"],
+  typeSpeed:150,
+  backSpeed:150,
+  looped:true
+})
+
+function sendEmail(){
+  Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "yadudeveloper077@gmail.com",
+    Password : "FCEA759CFBD0C679AA164491678132D5DBE2",
+    To : 'yadubringmebis@gmail.com ',
+    From : document.getElementById("email").value,
+    Subject : "This is the message",
+    Body : "And this is theuser"
+}).then(
+  message => alert("message send successfully")
+);
+}
+     
+    </script>
+
+
   </body>
+
 </html>
